@@ -15,7 +15,7 @@ class LocationProvider extends ChangeNotifier {
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
       isLoading = false;
-      throw error = "Location services are disabled.";
+      error = "Location services are disabled.";
       notifyListeners();
       return;
     }
@@ -25,7 +25,7 @@ class LocationProvider extends ChangeNotifier {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
         isLoading = true;
-        throw error = "Location permissions are denied";
+        error = "Location permissions are denied";
         notifyListeners();
         return;
       }
@@ -33,7 +33,7 @@ class LocationProvider extends ChangeNotifier {
 
     if (permission == LocationPermission.deniedForever) {
       isLoading = false;
-      throw error =
+      error =
           "'Location permissions are permanently denied, we cannot request permissions.'";
       notifyListeners();
       return;

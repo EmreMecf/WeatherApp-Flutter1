@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:testprojects/providers/currenttemp_provider.dart';
 import 'package:testprojects/providers/location_provider.dart';
-import 'package:testprojects/providers/weather_provider.dart';
 import 'package:testprojects/screens/loading_screen.dart';
 import 'package:testprojects/screens/weather_screen.dart';
 
@@ -11,7 +11,6 @@ class MainScreen extends StatefulWidget {
   const MainScreen({
     super.key,
   });
-
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -44,9 +43,8 @@ class MainScreenBody extends StatelessWidget {
     }
 
     return ChangeNotifierProvider(
-        create: (context) =>
-        locator<WeatherProvider>()
-          ..getCurrentTemperature(locationProvider.position!),
+        create: (context) => locator<WeatherProvider>()
+          ..getCurrentTemperatureByLocation(locationProvider.position!),
         child: const WeatherScreen());
   }
 }

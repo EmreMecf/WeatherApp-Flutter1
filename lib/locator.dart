@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:testprojects/api/weather_api.dart';
+import 'package:testprojects/providers/currenttemp_provider.dart';
 import 'package:testprojects/providers/location_provider.dart';
-import 'package:testprojects/providers/weather_provider.dart';
 
 final locator = GetIt.instance;
 

@@ -7,16 +7,16 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Colors.lightBlue, Colors.limeAccent]),
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assest/arka.png"),
+          fit: BoxFit.cover,
+        ),
       ),
-      child: Center(
+      child: const Center(
         child: SpinKitWaveSpinner(
           color: Colors.white,
-          size: 150.0,
+          size: 75,
           duration: Duration(milliseconds: 2500),
         ),
       ),

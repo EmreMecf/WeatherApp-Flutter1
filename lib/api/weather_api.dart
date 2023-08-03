@@ -9,7 +9,8 @@ class WeatherApi {
 
   WeatherApi(this._dio);
 
-  Future<WeatherResponse?> getCurrentTemperature(Position position) async {
+  Future<WeatherResponse?> getCurrentTemperatureByLocation(
+      Position position) async {
     final response = await _dio.get("weather", queryParameters: {
       "lat": position.latitude,
       "lon": position.longitude,
@@ -17,6 +18,16 @@ class WeatherApi {
       "units": "metric",
     });
 
+    return WeatherResponse.fromJson(response.data);
+  }
+
+  Future<WeatherResponse?> getCurrentTemperatureByCityName(
+      String cityName) async {
+    final response = await _dio.get("weather", queryParameters: {
+      "q": cityName,
+      "appid": apiKey,
+      "units": "metric",
+    });
     return WeatherResponse.fromJson(response.data);
   }
 }

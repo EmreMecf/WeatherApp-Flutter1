@@ -15,18 +15,18 @@ class weatherData {
       return WeatherDisplayUpdate(
           weatherIcon: const Icon(
             FontAwesomeIcons.moon,
-            size: 150,
+            size: 90,
             color: Colors.amber,
           ),
-          weatherImage: AssetImage('assest/Gece.jpg'));
+          weatherImage: AssetImage('assest/gece.png'));
     } else {
       return WeatherDisplayUpdate(
           weatherIcon: const Icon(
             FontAwesomeIcons.sun,
-            size: 150,
+            size: 90,
             color: Colors.lime,
           ),
-          weatherImage: AssetImage('assest/Güneşli.jpg'));
+          weatherImage: AssetImage('assest/sunny.png'));
     }
   }
 }

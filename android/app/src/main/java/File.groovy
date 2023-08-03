@@ -1,5 +1,6 @@
 class File {
-    File(def p) {
+    File(Object rootProject) {
 
     }
+
 }
